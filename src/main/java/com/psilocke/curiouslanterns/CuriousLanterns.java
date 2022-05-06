@@ -3,7 +3,6 @@ package com.psilocke.curiouslanterns;
 import com.mojang.logging.LogUtils;
 
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.client.event.TextureStitchEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
@@ -30,7 +29,6 @@ public class CuriousLanterns {
     public CuriousLanterns()
     {
 
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::TexStitchEventSub);
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         // Register the enqueueIMC method for modloading
@@ -41,18 +39,16 @@ public class CuriousLanterns {
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
     }
-
-    @SubscribeEvent
-    public void TexStitchEventSub(TextureStitchEvent.Pre event) {
-      event.addSprite(new ResourceLocation(MOD_ID, "gui/empty_hip_slot"));
-    }
     
     private void setup(final FMLCommonSetupEvent event) {
     	
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {
-        InterModComms.sendTo(CuriosApi.MODID, SlotTypeMessage.REGISTER_TYPE, () -> new SlotTypeMessage.Builder("hip").icon(new ResourceLocation(MOD_ID, "gui/inventory")).build());
+        InterModComms.sendTo(CuriosApi.MODID, SlotTypeMessage.REGISTER_TYPE, () -> new SlotTypeMessage.Builder("hip")
+        		.icon(new ResourceLocation("curios:slot/empty_hip_slot"))
+        		.build()
+        		);
     }
 
     private void processIMC(final InterModProcessEvent event) {
