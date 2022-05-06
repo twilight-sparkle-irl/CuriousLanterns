@@ -25,6 +25,16 @@ minecraft {
     mappings channel: 'official', version: "${mc_version}"
 	
     runs {
+    
+    	all {
+            def srgToMcpFile = project.tasks.createSrgToMcp.outputs.files[0].path
+
+            property 'net.minecraftforge.gradle.GradleStart.srg.srg-mcp', srgToMcpFile
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', srgToMcpFile
+        }
+    	
+    	
         client {
             workingDirectory project.file('run')
             
@@ -100,6 +110,12 @@ repositories {
 	maven {
         url = "https://maven.theillusivec4.top/"
     }
+    
+    maven {
+        name "Modding Legacy Maven"
+        url "https://maven.moddinglegacy.com/artifactory/modding-legacy/"
+    }
+    
 }
 
 dependencies {
@@ -107,6 +123,8 @@ dependencies {
     
     runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:${mc_version}-${curios_version}")
     compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:${mc_version}-${curios_version}:api")
+    
+    runtimeOnly fg.deobf("com.legacy:lucent:1.18.1-1.2.0")
     
 	runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}")
 }
