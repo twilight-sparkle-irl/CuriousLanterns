@@ -36,7 +36,7 @@ displayName="Curious Lanterns" #mandatory
 #displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
 
 # A file name (in the root of the mod JAR) containing a logo for display
-logoFile="lantern.png" #optional
+logoFile="curious_lanterns.png" #optional
 
 # A text field displayed in the mod UI
 credits="TheIllusiveC4 for Curios" #optional
