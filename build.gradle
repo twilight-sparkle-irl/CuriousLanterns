@@ -13,9 +13,9 @@ plugins {
 }
 apply plugin: 'net.minecraftforge.gradle'
 
-version = '${mod_version}'
-group = 'com.${dev_name}.${mod_name}'
-archivesBaseName = '${mod_name}'
+version = '1.0.1'
+group = 'com.psilocke.curiouslanterns'
+archivesBaseName = 'curiouslanterns'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
@@ -44,7 +44,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                '${mod_name}' {
+                'curiouslanterns' {
                     source sourceSets.main
                 }
             }
@@ -57,7 +57,7 @@ minecraft {
             property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
 
             mods {
-                '${mod_name}' {
+                'curiouslanterns' {
                     source sourceSets.main
                 }
             }
@@ -72,7 +72,7 @@ minecraft {
             property 'forge.enabledGameTestNamespaces', 'examplemod'
 
             mods {
-               '${mod_name}' {
+               'curiouslanterns' {
                     source sourceSets.main
                 }
             }
@@ -81,13 +81,13 @@ minecraft {
         data {
             workingDirectory project.file('run')
 			
-            args '--mod', '${mod_name}', '--all',
+            args '--mod', 'curiouslanterns', '--all',
 				'--existing', file('src/main/resources').toString(),
 				'--existing', file('src/generated/resources').toString(),
 				'--output', file('src/generated/resources')
 
             mods {
-                '${mod_name}' {
+                'curiouslanterns' {
                     source sourceSets.main
                 }
             }
@@ -133,12 +133,12 @@ dependencies {
 jar {
     manifest {
         attributes([
-                "Specification-Title"     : "${mod_name}",
-                "Specification-Vendor"    : "${mod_name}sareus",
+                "Specification-Title"     : "curiouslanterns",
+                "Specification-Vendor"    : "curiouslanternssareus",
                 "Specification-Version"   : "1", // We are version 1 of ourselves
                 "Implementation-Title"    : project.name,
-                "Implementation-Version"  : project.version,
-                "Implementation-Vendor"   : "${mod_name}sareus",
+                "Implementation-Version"  : project.jar.archiveVersion,
+                "Implementation-Vendor"   : "curiouslanternssareus",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
