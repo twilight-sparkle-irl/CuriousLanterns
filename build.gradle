@@ -13,9 +13,9 @@ plugins {
 }
 apply plugin: 'net.minecraftforge.gradle'
 
-version = '1.0.1'
-group = 'com.psilocke.curiouslanterns'
-archivesBaseName = 'curiouslanterns'
+version = "${mc_version}-${mod_version}"
+group = "com.${dev}.${mod_id}"
+archivesBaseName = "${mod_id}"
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
@@ -44,7 +44,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                'curiouslanterns' {
+                "${mod_id}" {
                     source sourceSets.main
                 }
             }
@@ -57,7 +57,7 @@ minecraft {
             property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
 
             mods {
-                'curiouslanterns' {
+                "${mod_id}" {
                     source sourceSets.main
                 }
             }
@@ -72,7 +72,7 @@ minecraft {
             property 'forge.enabledGameTestNamespaces', 'examplemod'
 
             mods {
-               'curiouslanterns' {
+               "${mod_id}" {
                     source sourceSets.main
                 }
             }
@@ -87,7 +87,7 @@ minecraft {
 				'--output', file('src/generated/resources')
 
             mods {
-                'curiouslanterns' {
+                "${mod_id}" {
                     source sourceSets.main
                 }
             }
@@ -133,12 +133,12 @@ dependencies {
 jar {
     manifest {
         attributes([
-                "Specification-Title"     : "curiouslanterns",
-                "Specification-Vendor"    : "curiouslanternssareus",
+                "Specification-Title"     : "${mod_id}",
+                "Specification-Vendor"    : "${mod_id}sareus",
                 "Specification-Version"   : "1", // We are version 1 of ourselves
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
-                "Implementation-Vendor"   : "curiouslanternssareus",
+                "Implementation-Vendor"   : "${mod_id}sareus",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
