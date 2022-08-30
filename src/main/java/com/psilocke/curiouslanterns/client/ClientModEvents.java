@@ -26,10 +26,10 @@ public class ClientModEvents {
 		if(ModList.get().isLoaded("supplementaries")) {
 			CuriosRendererRegistry.register(ForgeRegistries.ITEMS.getValue(new ResourceLocation("supplementaries:copper_lantern")), LanternRenderer::new);
 			CuriosRendererRegistry.register(ForgeRegistries.ITEMS.getValue(new ResourceLocation("supplementaries:crimson_lantern")), LanternRenderer::new);
-		}
-		
-		if(ModList.get().isLoaded("additionallanterns")) {
-			CuriosRendererRegistry.register(ForgeRegistries.ITEMS.getValue(new ResourceLocation("supplementaries:lantern")), LanternRenderer::new);
+			CuriosRendererRegistry.register(ForgeRegistries.ITEMS.getValue(new ResourceLocation("supplementaries:silver_lantern")), LanternRenderer::new);
+			CuriosRendererRegistry.register(ForgeRegistries.ITEMS.getValue(new ResourceLocation("supplementaries:brass_lantern")), LanternRenderer::new);
+			CuriosRendererRegistry.register(ForgeRegistries.ITEMS.getValue(new ResourceLocation("supplementaries:lead_lantern")), LanternRenderer::new);
+			CuriosRendererRegistry.register(ForgeRegistries.ITEMS.getValue(new ResourceLocation("supplementaries:gold_lantern")), LanternRenderer::new);
 		}
 	}
 	
@@ -41,6 +41,10 @@ public class ClientModEvents {
 		if(ModList.get().isLoaded("supplementaries")) {
 			ForgeModelBakery.addSpecialModel(new ResourceLocation("supplementaries", "block/copper_lantern"));
 			ForgeModelBakery.addSpecialModel(new ResourceLocation("supplementaries", "block/crimson_lantern"));
+			ForgeModelBakery.addSpecialModel(new ResourceLocation("supplementaries", "block/silver_lantern"));
+			ForgeModelBakery.addSpecialModel(new ResourceLocation("supplementaries", "block/brass_lantern"));
+			ForgeModelBakery.addSpecialModel(new ResourceLocation("supplementaries", "block/lead_lantern"));
+			ForgeModelBakery.addSpecialModel(new ResourceLocation("supplementaries", "block/gold_lantern"));
 		}
 	}
 }
