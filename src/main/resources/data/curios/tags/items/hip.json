@@ -2,6 +2,9 @@
 	"replace": false,
 	"values": [
 		"minecraft:lantern",
-		"minecraft:soul_lantern"
+		"minecraft:soul_lantern",
+		
+		"supplementaries:copper_lantern",
+		"supplementaries:crimson_lantern"
 	]
 }
