@@ -1,0 +1,53 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "minecraft:lantern",
+      "required": false
+    },
+    {
+      "id": "minecraft:soul_lantern",
+      "required": false
+    },
+    {
+      "id": "supplementaries:copper_lantern",
+      "required": false
+    },
+    {
+      "id": "supplementaries:crimson_lantern",
+      "required": false
+    },
+    {
+      "id": "supplementaries:silver_lantern",
+      "required": false
+    },
+    {
+      "id": "supplementaries:brass_lantern",
+      "required": false
+    },
+    {
+      "id": "supplementaries:lead_lantern",
+      "required": false
+    },
+    {
+      "id": "cyclic:gold_lantern",
+      "required": false
+    },
+    {
+      "id": "cyclic:gold_soul_lantern",
+      "required": false
+    },
+    {
+      "id": "cyclic:copper_lantern",
+      "required": false
+    },
+    {
+      "id": "cyclic:copper_soul_lantern",
+      "required": false
+    },
+    {
+      "id": "cyclic:netherite_lantern",
+      "required": false
+    }
+  ]
+}
