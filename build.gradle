@@ -130,13 +130,15 @@ dependencies {
     
     runtimeOnly fg.deobf("curse.maven:curious-lights-602199:${curiouslights_version_id}")
     
-    runtimeOnly fg.deobf("curse.maven:rubidium-574856:3929515")
-    runtimeOnly fg.deobf("curse.maven:dynamiclights-reforged-551736:3817266")
-    
-    runtimeOnly fg.deobf("curse.maven:supplementaries-412082:3947959")
-    runtimeOnly fg.deobf("curse.maven:selene-499980:3842421")
+    //runtimeOnly fg.deobf("curse.maven:rubidium-574856:3929515")
+    //runtimeOnly fg.deobf("curse.maven:dynamiclights-reforged-551736:3817266")
     
 	runtimeOnly fg.deobf("curse.maven:jei-238222:3940240")
+    
+    //runtimeOnly fg.deobf("curse.maven:supplementaries-412082:3947959")
+    //runtimeOnly fg.deobf("curse.maven:selene-499980:3842421")
+    
+    //runtimeOnly fg.deobf("curse.maven:cyclic-239286:3851582")
 }
 
 // Example for how to get properties into the manifest for reading at runtime.
