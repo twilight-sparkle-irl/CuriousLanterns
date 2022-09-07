@@ -29,7 +29,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 
 	@Override
 	protected void addTags() {
-		for(String var : ClientModEvents.lanterns) {
+		for(String var : CuriousLanterns.lanterns) {
 			String namespace = var.substring(0, var.indexOf(':'));
 			String item = var.substring(var.indexOf(':')+1);
 			

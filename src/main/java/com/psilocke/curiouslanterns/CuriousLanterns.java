@@ -15,6 +15,21 @@ import top.theillusivec4.curios.api.SlotTypeMessage;
 @Mod("curiouslanterns")
 public class CuriousLanterns {
 	public static final String MOD_ID = "curiouslanterns";
+	
+	public final static String[] lanterns = {
+			"minecraft:lantern",
+			"minecraft:soul_lantern",
+			"supplementaries:copper_lantern",
+			"supplementaries:crimson_lantern",
+			"supplementaries:silver_lantern",
+			"supplementaries:brass_lantern",
+			"supplementaries:lead_lantern",
+			"cyclic:gold_lantern",
+			"cyclic:gold_soul_lantern",
+			"cyclic:copper_lantern",
+			"cyclic:copper_soul_lantern",
+			"cyclic:netherite_lantern"
+	};
 
     public CuriousLanterns()
     {

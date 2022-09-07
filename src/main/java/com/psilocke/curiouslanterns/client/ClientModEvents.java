@@ -17,24 +17,9 @@ import top.theillusivec4.curios.api.client.CuriosRendererRegistry;
 @Mod.EventBusSubscriber(modid = CuriousLanterns.MOD_ID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ClientModEvents {
 	
-	public final static String[] lanterns = {
-			"minecraft:lantern",
-			"minecraft:soul_lantern",
-			"supplementaries:copper_lantern",
-			"supplementaries:crimson_lantern",
-			"supplementaries:silver_lantern",
-			"supplementaries:brass_lantern",
-			"supplementaries:lead_lantern",
-			"cyclic:gold_lantern",
-			"cyclic:gold_soul_lantern",
-			"cyclic:copper_lantern",
-			"cyclic:copper_soul_lantern",
-			"cyclic:netherite_lantern"
-	};
-	
 	@SubscribeEvent
 	public static void onClientSetupEvent(FMLClientSetupEvent e) {
-		for(String var : lanterns) {
+		for(String var : CuriousLanterns.lanterns) {
 			String namespace = var.substring(0, var.indexOf(':'));
 			String item = var.substring(var.indexOf(':')+1);
 			
@@ -46,7 +31,7 @@ public class ClientModEvents {
 	
 	@SubscribeEvent
 	public static void onModelregister(ModelRegistryEvent event) {
-		for(String var : lanterns) {
+		for(String var : CuriousLanterns.lanterns) {
 			String namespace = var.substring(0, var.indexOf(':'));
 			String item = var.substring(var.indexOf(':')+1);
 			
