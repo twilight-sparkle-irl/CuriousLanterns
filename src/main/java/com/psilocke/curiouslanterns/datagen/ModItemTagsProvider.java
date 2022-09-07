@@ -10,6 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraftforge.client.model.ForgeModelBakery;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import top.theillusivec4.curios.api.CuriosApi;
 
@@ -29,11 +30,27 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 
 	@Override
 	protected void addTags() {
+		
+		//for normal mods
+		
 		for(String var : CuriousLanterns.lanterns) {
 			String namespace = var.substring(0, var.indexOf(':'));
 			String item = var.substring(var.indexOf(':')+1);
 			
 			this.tag(HIP).addOptional(new ResourceLocation(namespace, item));
+		}
+		
+		//for additional lanterns because of fricking course
+		
+		for(String color : CuriousLanterns.lan_colors) {
+			for(String material : CuriousLanterns.lan_materials) {
+				String name = color;
+				if(name == CuriousLanterns.lan_colors[0]) {
+					name += material;
+				}else name += ("_" + material);
+				
+				this.tag(HIP).addOptional(new ResourceLocation("additionallanterns", name+"_lantern"));
+			}
 		}
 	}
 

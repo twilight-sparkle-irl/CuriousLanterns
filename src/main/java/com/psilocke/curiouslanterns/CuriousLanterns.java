@@ -30,6 +30,49 @@ public class CuriousLanterns {
 			"cyclic:copper_soul_lantern",
 			"cyclic:netherite_lantern"
 	};
+	
+	public final static String[] lan_materials = {
+			"normal",
+			"obsidian",
+			"basalt",
+			"andesite",
+			"diorite",
+			"granite",
+			"normal_sandstone",
+			"red_sandstone",
+			"smooth_stone",
+			"end_stone",
+			"quartz",
+			"prismarine",
+			"dark_prismarine",
+			"blackstone",
+			"normal_nether_bricks",
+			"red_nether_bricks",
+			"crimson",
+			"warped",
+			"purpur",
+			"bricks"
+	};
+	
+	public final static String[] lan_colors = {
+			"",
+			"white",
+			"orange",
+			"magenta",
+			"light_blue",
+			"yellow",
+			"lime",
+			"pink",
+			"gray",
+			"light_gray",
+			"cyan",
+			"purple",
+			"blue",
+			"brown",
+			"green",
+			"red",
+			"black"
+	};
 
     public CuriousLanterns()
     {

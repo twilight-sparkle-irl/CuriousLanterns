@@ -19,6 +19,9 @@ public class ClientModEvents {
 	
 	@SubscribeEvent
 	public static void onClientSetupEvent(FMLClientSetupEvent e) {
+		
+		//normal lantern mods
+		
 		for(String var : CuriousLanterns.lanterns) {
 			String namespace = var.substring(0, var.indexOf(':'));
 			String item = var.substring(var.indexOf(':')+1);
@@ -27,16 +30,47 @@ public class ClientModEvents {
 				CuriosRendererRegistry.register(ForgeRegistries.ITEMS.getValue(new ResourceLocation(namespace, item)), LanternRenderer::new);
 			}
 		}
+		
+		//additional lanterns because of fricking course
+		if(ModList.get().isLoaded("additionallanterns")) {
+			for(String color : CuriousLanterns.lan_colors) {
+				for(String material : CuriousLanterns.lan_materials) {
+					String name = color;
+					if(name == CuriousLanterns.lan_colors[0]) {
+						name += material;
+					}else name += ("_" + material);
+					
+					CuriosRendererRegistry.register(ForgeRegistries.ITEMS.getValue(new ResourceLocation("additionallanterns", name+"_lantern")), LanternRenderer::new);
+				}
+			}
+		}
 	}
 	
 	@SubscribeEvent
 	public static void onModelregister(ModelRegistryEvent event) {
+		
+		//normal lantern mods
+		
 		for(String var : CuriousLanterns.lanterns) {
 			String namespace = var.substring(0, var.indexOf(':'));
 			String item = var.substring(var.indexOf(':')+1);
 			
 			if(ModList.get().isLoaded(namespace)) {
 				ForgeModelBakery.addSpecialModel(new ResourceLocation(namespace, "block/" + item));
+			}
+		}
+		
+		//additional lanterns because of fricking course
+		if(ModList.get().isLoaded("additionallanterns")) {
+			for(String color : CuriousLanterns.lan_colors) {
+				for(String material : CuriousLanterns.lan_materials) {
+					String name = color;
+					if(name == CuriousLanterns.lan_colors[0]) {
+						name += material;
+					}else name += ("_" + material);
+					
+					ForgeModelBakery.addSpecialModel(new ResourceLocation("additionallanterns", "block/" + name+"_lantern"));
+				}
 			}
 		}
 	}
