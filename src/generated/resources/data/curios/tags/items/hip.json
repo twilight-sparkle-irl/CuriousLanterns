@@ -50,6 +50,14 @@
       "required": false
     },
     {
+      "id": "quark:paper_lantern",
+      "required": false
+    },
+    {
+      "id": "quark:paper_lantern_sakura",
+      "required": false
+    },
+    {
       "id": "additionallanterns:normal_lantern",
       "required": false
     },

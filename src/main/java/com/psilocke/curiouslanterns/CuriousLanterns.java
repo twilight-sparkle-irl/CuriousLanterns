@@ -31,6 +31,11 @@ public class CuriousLanterns {
 			"cyclic:netherite_lantern"
 	};
 	
+	public final static String[] large_lanterns = {
+			"quark:paper_lantern",
+			"quark:paper_lantern_sakura"
+	};
+	
 	public final static String[] lan_materials = {
 			"normal",
 			"obsidian",
