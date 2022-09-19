@@ -148,7 +148,7 @@ dependencies {
     //runtimeOnly fg.deobf("curse.maven:quark-243121:3840125")
     //runtimeOnly fg.deobf("curse.maven:autoreglib-250363:3642382")
     
-    runtimeOnly fg.deobf("curse.maven:skinned-lanterns-414154:3752414")
+    //runtimeOnly fg.deobf("curse.maven:skinned-lanterns-414154:3752414")
 }
 
 // Example for how to get properties into the manifest for reading at runtime.
