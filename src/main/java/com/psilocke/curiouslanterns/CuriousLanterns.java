@@ -1,10 +1,14 @@
 package com.psilocke.curiouslanterns;
 
+import com.psilocke.curiouslanterns.config.CuriousLanternsClientConfig;
+
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -16,7 +20,7 @@ import top.theillusivec4.curios.api.SlotTypeMessage;
 public class CuriousLanterns {
 	public static final String MOD_ID = "curiouslanterns";
 	
-	public final static String[] lanterns = {
+	public static String[] lanterns = {
 			"minecraft:lantern",
 			"minecraft:soul_lantern",
 			"supplementaries:copper_lantern",
@@ -31,13 +35,13 @@ public class CuriousLanterns {
 			"cyclic:netherite_lantern"
 	};
 	
-	public final static String[] large_lanterns = {
+	public static String[] large_lanterns = {
 			"quark:paper_lantern",
 			"quark:paper_lantern_sakura"
 	};
 	
 	/*
-	public final static String[] skinned_lanterns = {
+	public static String[] skinned_lanterns = {
 			"jack_o_lantern",
 			"zombie",
 			"creeper",
@@ -62,7 +66,7 @@ public class CuriousLanterns {
 	};
 	*/
 	
-	public final static String[] lan_materials = {
+	public static String[] lan_materials = {
 			"normal",
 			"obsidian",
 			"basalt",
@@ -85,7 +89,7 @@ public class CuriousLanterns {
 			"bricks"
 	};
 	
-	public final static String[] lan_colors = {
+	public static String[] lan_colors = {
 			"",
 			"white",
 			"orange",
@@ -112,8 +116,9 @@ public class CuriousLanterns {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         // Register the enqueueIMC method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
-        // Register the processIMC method for modloading
-
+        // Register Config
+        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, CuriousLanternsClientConfig.SPEC, "curious-lanterns-client.toml");
+        
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
     }
