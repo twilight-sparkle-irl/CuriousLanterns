@@ -2,6 +2,7 @@ package com.psilocke.curiouslanterns.curios;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Vector3f;
+import com.psilocke.curiouslanterns.config.CuriousLanternsClientConfig;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.EntityModel;
@@ -12,6 +13,7 @@ import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import top.theillusivec4.curios.api.SlotContext;
@@ -41,7 +43,25 @@ public class LargeLanternRenderer implements ICurioRenderer {
 			matrixStack.translate(0.0F, 0.18F, 0.3F);
 		}
 		matrixStack.translate(-.23, 0.78, 0.133);
-		matrixStack.mulPose(Vector3f.ZP.rotationDegrees(180));
+		matrixStack.mulPose(Vector3f.XP.rotationDegrees(180));
+		if(CuriousLanternsClientConfig.LANTERN_SWING.get()) {
+			double d0 = living.xo - living.getX();
+            double d1 = living.yo - living.getY();
+            double d2 = living.zo - living.getZ();
+            float f = living.yBodyRotO + (living.yBodyRot - living.yBodyRotO);
+            double d3 = (double)Mth.sin(f * ((float)Math.PI / 180F));
+            double d4 = (double)(-Mth.cos(f * ((float)Math.PI / 180F)));
+            float f1 = (float)d1 * 10.0F;
+            f1 = Mth.clamp(f1, -6.0F, 32.0F);
+            float f2 = (float)(d0 * d3 + d2 * d4) * 100.0F;
+            f2 = Mth.clamp(f2, 0.0F, 150.0F);
+            float f3 = (float)(d0 * d4 - d2 * d3) * 100.0F;
+            f3 = Mth.clamp(f3, -20.0F, 20.0F);
+            
+
+            matrixStack.mulPose(Vector3f.XP.rotationDegrees(6.0F + f2 / 2.0F + f1));
+            matrixStack.mulPose(Vector3f.ZP.rotationDegrees(-f3 / 2.0F));
+		}
 		matrixStack.scale(0.33f, 0.33f, 0.33f);
 		BakedModel lantern = itemRenderer.getItemModelShaper().getModelManager().getModel(new ResourceLocation(stack.getItem().getRegistryName().getNamespace(), "block/" + stack.getItem().getRegistryName().getPath()));
 		MultiBufferSource.BufferSource buffer = Minecraft.getInstance().renderBuffers().bufferSource();
