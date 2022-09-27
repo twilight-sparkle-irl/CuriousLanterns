@@ -11,7 +11,7 @@ public class CuriousLanternsClientConfig {
 	static {
 		BUILDER.push("Configs for Curious Lanterns");
 		
-		LANTERN_SWING = BUILDER.comment("Should the lantern swing or not.").define("Should Swing", false);
+		LANTERN_SWING = BUILDER.comment("Should the lantern swing or not. Default: false").define("Should Swing", false);
 		
 		BUILDER.pop();
 		SPEC = BUILDER.build();
