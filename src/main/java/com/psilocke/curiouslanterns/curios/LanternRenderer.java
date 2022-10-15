@@ -63,7 +63,7 @@ public class LanternRenderer implements ICurioRenderer {
             matrixStack.mulPose(Vector3f.ZP.rotationDegrees(-f3 / 2.0F));
 		}
 		matrixStack.scale(0.5f, 0.5f, 0.5f);
-		BakedModel lantern = itemRenderer.getItemModelShaper().getModelManager().getModel(new ResourceLocation(stack.getItem().getRegistryName().getNamespace(), "block/" + stack.getItem().getRegistryName().getPath()));
+		BakedModel lantern = itemRenderer.getItemModelShaper().getModelManager().getModel(new ResourceLocation(stack.getItem().getCreatorModId(stack), "block/" + stack.getItem()));
 		MultiBufferSource.BufferSource buffer = Minecraft.getInstance().renderBuffers().bufferSource();
 		itemRenderer.render(stack, ItemTransforms.TransformType.HEAD, true, matrixStack, buffer, light, OverlayTexture.NO_OVERLAY, lantern);
 		matrixStack.popPose();

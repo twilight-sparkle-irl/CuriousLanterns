@@ -4,9 +4,9 @@ import com.psilocke.curiouslanterns.CuriousLanterns;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 
 @Mod.EventBusSubscriber(modid = CuriousLanterns.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DataGenerators {
@@ -19,7 +19,7 @@ public class DataGenerators {
 		
 		ModBlockTagsProvider blockTags = new ModBlockTagsProvider(gen, existingFileHelper);
 		
-		gen.addProvider(blockTags);
-		gen.addProvider(new ModItemTagsProvider(gen, blockTags, existingFileHelper));
+		gen.addProvider(true, blockTags);
+		gen.addProvider(true, new ModItemTagsProvider(gen, blockTags, existingFileHelper));
 	}
 }

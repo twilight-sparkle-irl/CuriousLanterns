@@ -6,8 +6,7 @@ import com.psilocke.curiouslanterns.curios.LargeLanternRenderer;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.ModelRegistryEvent;
-import net.minecraftforge.client.model.ForgeModelBakery;
+import net.minecraftforge.client.event.ModelEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
@@ -80,7 +79,7 @@ public class ClientModEvents {
 	}
 	
 	@SubscribeEvent
-	public static void onModelregister(ModelRegistryEvent event) {
+	public static void onModelregister(ModelEvent.RegisterAdditional event) {
 		
 		//normal lantern mods
 		
@@ -89,7 +88,7 @@ public class ClientModEvents {
 			String item = var.substring(var.indexOf(':')+1);
 			
 			if(ModList.get().isLoaded(namespace)) {
-				ForgeModelBakery.addSpecialModel(new ResourceLocation(namespace, "block/" + item));
+				event.register(new ResourceLocation(namespace, "block/" + item));
 			}
 		}
 		
@@ -100,7 +99,7 @@ public class ClientModEvents {
 			String item = var.substring(var.indexOf(':')+1);
 			
 			if(ModList.get().isLoaded(namespace)) {
-				ForgeModelBakery.addSpecialModel(new ResourceLocation(namespace, "block/" + item));
+				event.register(new ResourceLocation(namespace, "block/" + item));
 			}
 		}
 		
@@ -113,7 +112,7 @@ public class ClientModEvents {
 						name += material;
 					}else name += ("_" + material);
 					
-					ForgeModelBakery.addSpecialModel(new ResourceLocation("additionallanterns", "block/" + name+ "_lantern"));
+					event.register(new ResourceLocation("additionallanterns", "block/" + name+ "_lantern"));
 				}
 			}
 		}
@@ -128,12 +127,12 @@ public class ClientModEvents {
 						if(color == "") {
 							continue;
 						}
-						ForgeModelBakery.addSpecialModel(new ResourceLocation("skinnedlanterns", "block/" + name + "_" + color + "_lantern_block"));
-						ForgeModelBakery.addSpecialModel(new ResourceLocation("skinnedlanterns", "block/" + name + "_" + color + "_soul_lantern_block"));
+						event.register(new ResourceLocation("skinnedlanterns", "block/" + name + "_" + color + "_lantern_block"));
+						event.register(new ResourceLocation("skinnedlanterns", "block/" + name + "_" + color + "_soul_lantern_block"));
 					}
 				}else {
-					ForgeModelBakery.addSpecialModel(new ResourceLocation("skinnedlanterns", "block/" + name + "_lantern_block"));
-					ForgeModelBakery.addSpecialModel(new ResourceLocation("skinnedlanterns", "block/" + name + "_soul_lantern_block"));
+					event.register(new ResourceLocation("skinnedlanterns", "block/" + name + "_lantern_block"));
+					event.register(new ResourceLocation("skinnedlanterns", "block/" + name + "_soul_lantern_block"));
 				}
 			}
 		}
