@@ -40,32 +40,6 @@ public class CuriousLanterns {
 			"quark:paper_lantern_sakura"
 	};
 	
-	/*
-	public static String[] skinned_lanterns = {
-			"jack_o_lantern",
-			"zombie",
-			"creeper",
-			"skeleton",
-			"wither_skeleton",
-			"ghost",
-			"inky",
-			"pinky",
-			"blinky",
-			"clyde",
-			"slime",
-			"bee",
-			"guardian",
-			"pufferfish",
-			"pacman",
-			"paper",
-			"ornament",
-			"present_green",
-			"present_red",
-			"snowman",
-			"honey"
-	};
-	*/
-	
 	public static String[] lan_materials = {
 			"normal",
 			"obsidian",

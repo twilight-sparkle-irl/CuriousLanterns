@@ -55,27 +55,6 @@ public class ClientModEvents {
 				}
 			}
 		}
-		
-		/*
-		//for skinned lanterns *sigh* (does not work)
-
-		if(ModList.get().isLoaded("skinnedlanterns")) {
-			for(String name : CuriousLanterns.skinned_lanterns) {
-				if(name == "paper" || name == "ornament") {
-					for (String color : CuriousLanterns.lan_colors) {
-						if(color == "") {
-							continue;
-						}
-						CuriosRendererRegistry.register(ForgeRegistries.ITEMS.getValue(new ResourceLocation("skinnedlanterns", name + "_" + color + "_lantern_block")), LargeLanternRenderer::new);
-						CuriosRendererRegistry.register(ForgeRegistries.ITEMS.getValue(new ResourceLocation("skinnedlanterns", name + "_" + color + "_soul_lantern_block")), LargeLanternRenderer::new);
-					}
-				}else {
-					CuriosRendererRegistry.register(ForgeRegistries.ITEMS.getValue(new ResourceLocation("skinnedlanterns", name + "_lantern_block")), LargeLanternRenderer::new);
-					CuriosRendererRegistry.register(ForgeRegistries.ITEMS.getValue(new ResourceLocation("skinnedlanterns", name + "_soul_lantern_block")), LargeLanternRenderer::new);
-				}
-			}
-		}
-		*/
 	}
 	
 	@SubscribeEvent
@@ -116,26 +95,5 @@ public class ClientModEvents {
 				}
 			}
 		}
-		
-		/*
-		//for skinned lanterns *sigh* (does not work)
-
-		if(ModList.get().isLoaded("skinnedlanterns")) {
-			for(String name : CuriousLanterns.skinned_lanterns) {
-				if(name == "paper" || name == "ornament") {
-					for (String color : CuriousLanterns.lan_colors) {
-						if(color == "") {
-							continue;
-						}
-						event.register(new ResourceLocation("skinnedlanterns", "block/" + name + "_" + color + "_lantern_block"));
-						event.register(new ResourceLocation("skinnedlanterns", "block/" + name + "_" + color + "_soul_lantern_block"));
-					}
-				}else {
-					event.register(new ResourceLocation("skinnedlanterns", "block/" + name + "_lantern_block"));
-					event.register(new ResourceLocation("skinnedlanterns", "block/" + name + "_soul_lantern_block"));
-				}
-			}
-		}
-		*/
 	}
 }
