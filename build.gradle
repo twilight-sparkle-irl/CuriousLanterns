@@ -135,6 +135,8 @@ dependencies {
     
     //runtimeOnly fg.deobf("curse.maven:lucent-493280:3930627")
     
+    //runtimeOnly fg.deobf("curse.maven:dynamic-lights-227874:3933882")
+    
 	//runtimeOnly fg.deobf("curse.maven:jei-238222:3969039")
     
     //runtimeOnly fg.deobf("curse.maven:supplementaries-412082:4027165")
