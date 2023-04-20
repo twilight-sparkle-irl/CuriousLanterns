@@ -9,9 +9,9 @@ public class CuriousLanternsClientConfig {
 	public static final ForgeConfigSpec.ConfigValue<Boolean> LANTERN_SWING;
 	
 	static {
-		BUILDER.push("Configs for Curious Lanterns");
+		BUILDER.push("Client Configs for Curious Lanterns");
 		
-		LANTERN_SWING = BUILDER.comment("Should the lantern swing or not. Default: false").define("Should Swing", false);
+		LANTERN_SWING = BUILDER.comment("Should the lantern swing or not.\nDefault: false").define("Should Swing", false);
 		
 		BUILDER.pop();
 		SPEC = BUILDER.build();
