@@ -68,25 +68,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 				this.tag(BELT).addOptional(new ResourceLocation("additionallanterns", name+"_lantern"));
 			}
 		}
-		
-		/*
-		//for skinned lanterns *sigh* (does not work)
-		
-		for(String name : CuriousLanterns.skinned_lanterns) {
-			if(name == "paper" || name == "ornament") {
-				for (String color : CuriousLanterns.lan_colors) {
-					if(color == "") {
-						continue;
-					}
-					this.tag(HIP).addOptional(new ResourceLocation("skinnedlanterns", name + "_" + color + "_lantern_block"));
-					this.tag(HIP).addOptional(new ResourceLocation("skinnedlanterns", name + "_" + color + "_soul_lantern_block"));
-				}
-			}else {
-				this.tag(HIP).addOptional(new ResourceLocation("skinnedlanterns", name + "_lantern_block"));
-				this.tag(HIP).addOptional(new ResourceLocation("skinnedlanterns", name + "_soul_lantern_block"));
-			}
-		}
-		*/
 	}
 
 }
