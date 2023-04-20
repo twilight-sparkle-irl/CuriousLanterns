@@ -37,6 +37,15 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 			
 			this.tag(HIP).addOptional(new ResourceLocation(namespace, item));
 		}
+
+		//for medium lanterns
+		
+		for(String var : CuriousLanterns.medium_lanterns) {
+			String namespace = var.substring(0, var.indexOf(':'));
+			String item = var.substring(var.indexOf(':')+1);
+			
+			this.tag(HIP).addOptional(new ResourceLocation(namespace, item));
+		}
 		
 		//for larger lanterns
 		
