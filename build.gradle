@@ -145,6 +145,8 @@ dependencies {
     //runtimeOnly fg.deobf("curse.maven:additional-lanterns-501590:3544072")
     //runtimeOnly fg.deobf("curse.maven:supermartijn642s-core-lib-454372:3863129")
     
+    //runtimeOnly fg.deobf("curse.maven:macaws-lights-and-lamps-502372:4358260")
+    
     //runtimeOnly fg.deobf("curse.maven:quark-243121:3840125")
     //runtimeOnly fg.deobf("curse.maven:autoreglib-250363:3642382")
     
