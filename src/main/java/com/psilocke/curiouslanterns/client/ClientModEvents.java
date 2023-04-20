@@ -2,6 +2,7 @@ package com.psilocke.curiouslanterns.client;
 
 import com.psilocke.curiouslanterns.CuriousLanterns;
 import com.psilocke.curiouslanterns.curios.LanternRenderer;
+import com.psilocke.curiouslanterns.curios.MediumLanternRenderer;
 import com.psilocke.curiouslanterns.curios.LargeLanternRenderer;
 
 import net.minecraft.resources.ResourceLocation;
@@ -32,6 +33,17 @@ public class ClientModEvents {
 			}
 		}
 		
+		//for medium lanterns
+		
+		for(String var : CuriousLanterns.medium_lanterns) {
+			String namespace = var.substring(0, var.indexOf(':'));
+			String item = var.substring(var.indexOf(':')+1);
+			
+			if(ModList.get().isLoaded(namespace)) {
+				CuriosRendererRegistry.register(ForgeRegistries.ITEMS.getValue(new ResourceLocation(namespace, item)), MediumLanternRenderer::new);
+			}
+		}
+
 		//for larger lanterns
 		
 		for(String var : CuriousLanterns.large_lanterns) {
@@ -85,6 +97,17 @@ public class ClientModEvents {
 		//normal lantern mods
 		
 		for(String var : CuriousLanterns.lanterns) {
+			String namespace = var.substring(0, var.indexOf(':'));
+			String item = var.substring(var.indexOf(':')+1);
+			
+			if(ModList.get().isLoaded(namespace)) {
+				ForgeModelBakery.addSpecialModel(new ResourceLocation(namespace, "block/" + item));
+			}
+		}
+
+		//for medium lanterns
+		
+		for(String var : CuriousLanterns.medium_lanterns) {
 			String namespace = var.substring(0, var.indexOf(':'));
 			String item = var.substring(var.indexOf(':')+1);
 			
