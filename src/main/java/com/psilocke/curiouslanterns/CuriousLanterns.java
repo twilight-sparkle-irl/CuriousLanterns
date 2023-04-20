@@ -180,7 +180,8 @@ public class CuriousLanterns {
 	};
 	*/
 	
-	public static String[] lan_materials = {
+	//additional lanterns materials
+	public static String[] add_lan_materials = {
 			"normal",
 			"obsidian",
 			"basalt",
@@ -203,7 +204,8 @@ public class CuriousLanterns {
 			"bricks"
 	};
 	
-	public static String[] lan_colors = {
+	//additional lanterns colors
+	public static String[] add_lan_colors = {
 			"",
 			"white",
 			"orange",
