@@ -49,6 +49,34 @@
       "required": false
     },
     {
+      "id": "mcwlights:striped_lantern",
+      "required": false
+    },
+    {
+      "id": "mcwlights:covered_lantern",
+      "required": false
+    },
+    {
+      "id": "mcwlights:chain_lantern",
+      "required": false
+    },
+    {
+      "id": "mcwlights:tavern_lantern",
+      "required": false
+    },
+    {
+      "id": "mcwlights:festive_lantern",
+      "required": false
+    },
+    {
+      "id": "mcwlights:cross_lantern",
+      "required": false
+    },
+    {
+      "id": "mcwlights:bell_lantern",
+      "required": false
+    },
+    {
       "id": "quark:paper_lantern",
       "required": false
     },
