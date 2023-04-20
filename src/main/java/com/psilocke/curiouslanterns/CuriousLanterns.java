@@ -1,19 +1,20 @@
 package com.psilocke.curiouslanterns;
 
 import com.psilocke.curiouslanterns.config.CuriousLanternsClientConfig;
+import com.psilocke.curiouslanterns.config.CuriousLanternsCommonConfig;
 
-import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotTypeMessage;
+import top.theillusivec4.curios.api.SlotTypePreset;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod("curiouslanterns")
@@ -201,27 +202,26 @@ public class CuriousLanterns {
 
     public CuriousLanterns()
     {
-    	
-        // Register the setup method for modloading
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         // Register the enqueueIMC method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
         // Register Config
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, CuriousLanternsClientConfig.SPEC, "curious-lanterns-client.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, CuriousLanternsCommonConfig.SPEC, "curious-lanterns-common.toml");
         
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
     }
-    
-    private void setup(final FMLCommonSetupEvent event) {
-    	
-    }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {
-        InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> new SlotTypeMessage.Builder("hip")
+    	
+    	InterModComms.sendTo(CuriosApi.MODID, SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.BELT.getMessageBuilder().size(CuriousLanternsCommonConfig.TOTAL_SLOTS.get()).build());
+    	
+        /*
+         InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> new SlotTypeMessage.Builder("hip")
         		.icon(new ResourceLocation("curios:slot/empty_hip_slot"))
         		.build()
         		);
+        */
     }
 
     @SubscribeEvent

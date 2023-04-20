@@ -14,7 +14,7 @@ import top.theillusivec4.curios.api.CuriosApi;
 
 public class ModItemTagsProvider extends ItemTagsProvider {
 	
-	public static final TagKey<Item> HIP = ItemTags.create(new ResourceLocation(CuriosApi.MODID, "hip"));
+	public static final TagKey<Item> BELT = ItemTags.create(new ResourceLocation(CuriosApi.MODID, "belt"));
 	
 	protected ModItemTagsProvider(DataGenerator gen, BlockTagsProvider blockTags, ExistingFileHelper fileHelper) {
 		super(gen, blockTags, CuriousLanterns.MOD_ID, fileHelper);
@@ -35,7 +35,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 			String namespace = var.substring(0, var.indexOf(':'));
 			String item = var.substring(var.indexOf(':')+1);
 			
-			this.tag(HIP).addOptional(new ResourceLocation(namespace, item));
+			this.tag(BELT).addOptional(new ResourceLocation(namespace, item));
 		}
 
 		//for medium lanterns
@@ -44,7 +44,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 			String namespace = var.substring(0, var.indexOf(':'));
 			String item = var.substring(var.indexOf(':')+1);
 			
-			this.tag(HIP).addOptional(new ResourceLocation(namespace, item));
+			this.tag(BELT).addOptional(new ResourceLocation(namespace, item));
 		}
 		
 		//for larger lanterns
@@ -53,7 +53,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 			String namespace = var.substring(0, var.indexOf(':'));
 			String item = var.substring(var.indexOf(':')+1);
 			
-			this.tag(HIP).addOptional(new ResourceLocation(namespace, item));
+			this.tag(BELT).addOptional(new ResourceLocation(namespace, item));
 		}
 		
 		//for additional lanterns because of fricking course
@@ -65,7 +65,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 					name += material;
 				}else name += ("_" + material);
 				
-				this.tag(HIP).addOptional(new ResourceLocation("additionallanterns", name+"_lantern"));
+				this.tag(BELT).addOptional(new ResourceLocation("additionallanterns", name+"_lantern"));
 			}
 		}
 		
