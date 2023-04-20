@@ -131,7 +131,7 @@ dependencies {
     runtimeOnly fg.deobf("curse.maven:radiant-gear-602199:${radiantgear_version_id}")
     
     //runtimeOnly fg.deobf("curse.maven:rubidium-574856:3973894")
-    //runtimeOnly fg.deobf("curse.maven:dynamiclights-reforged-551736:3771454") #needs update
+    //runtimeOnly fg.deobf("curse.maven:dynamiclights-reforged-551736:4285414")
     
     //runtimeOnly fg.deobf("curse.maven:lucent-493280:3930627")
     
@@ -146,6 +146,8 @@ dependencies {
     
     //runtimeOnly fg.deobf("curse.maven:additional-lanterns-501590:3871897")
     //runtimeOnly fg.deobf("curse.maven:supermartijn642s-core-lib-454372:3910759")
+    
+    //runtimeOnly fg.deobf("curse.maven:macaws-lights-and-lamps-502372:4358264")
     
     //runtimeOnly fg.deobf("curse.maven:quark-243121:3961436")
     //runtimeOnly fg.deobf("curse.maven:autoreglib-250363:3857246")

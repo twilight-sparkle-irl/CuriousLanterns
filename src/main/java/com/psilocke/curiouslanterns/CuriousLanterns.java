@@ -33,7 +33,14 @@ public class CuriousLanterns {
 			"cyclic:gold_soul_lantern",
 			"cyclic:copper_lantern",
 			"cyclic:copper_soul_lantern",
-			"cyclic:netherite_lantern"
+			"cyclic:netherite_lantern",
+			"mcwlights:striped_lantern",
+			"mcwlights:covered_lantern",
+			"mcwlights:chain_lantern",
+			"mcwlights:tavern_lantern",
+			"mcwlights:festive_lantern",
+			"mcwlights:cross_lantern",
+			"mcwlights:bell_lantern"
 	};
 	
 	public static String[] large_lanterns = {
