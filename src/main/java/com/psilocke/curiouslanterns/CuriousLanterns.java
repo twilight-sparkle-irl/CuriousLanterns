@@ -42,8 +42,13 @@ public class CuriousLanterns {
 			"mcwlights:cross_lantern",
 			"mcwlights:bell_lantern"
 	};
-
+	
 	public static String[] medium_lanterns = {
+			"quark:paper_lantern",
+			"quark:paper_lantern_sakura"
+	};
+	
+	public static String[] large_lanterns = {
 			"skinnedlanterns:pufferfish_lantern_block",
 			"skinnedlanterns:pufferfish_soul_lantern_block",
 			"skinnedlanterns:zombie_lantern_block",
@@ -150,11 +155,6 @@ public class CuriousLanterns {
 			"skinnedlanterns:slime_soul_lantern_block"
 	};
 
-	public static String[] large_lanterns = {
-			"quark:paper_lantern",
-			"quark:paper_lantern_sakura"
-	};
-	
 	//additional lanterns materials
 	public static String[] add_lan_materials = {
 			"normal",

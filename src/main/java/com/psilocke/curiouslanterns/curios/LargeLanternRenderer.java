@@ -19,7 +19,7 @@ import net.minecraft.world.item.ItemStack;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.client.ICurioRenderer;
 
-public class LargeLanternRenderer implements ICurioRenderer {
+public class MediumLanternRenderer implements ICurioRenderer {
 
 	@Override
 	public <T extends LivingEntity, M extends EntityModel<T>> void render(
@@ -40,9 +40,9 @@ public class LargeLanternRenderer implements ICurioRenderer {
 		ItemRenderer itemRenderer = Minecraft.getInstance().getItemRenderer();
 		LivingEntity living = slotContext.entity();
 		if(living.isCrouching()) {
-			matrixStack.translate(0.0F, 0.18F, 0.3F);
+			matrixStack.translate(0.0F, 0.14F, 0.31F);
 		}
-		matrixStack.translate(-.23, 0.78, 0.133);
+		matrixStack.translate(-.23, 0.81, 0.133);
 		matrixStack.mulPose(Vector3f.XP.rotationDegrees(180));
 		if(CuriousLanternsClientConfig.LANTERN_SWING.get()) {
 			double d0 = living.xo - living.getX();
@@ -62,7 +62,7 @@ public class LargeLanternRenderer implements ICurioRenderer {
             matrixStack.mulPose(Vector3f.XP.rotationDegrees(6.0F + f2 / 2.0F + f1));
             matrixStack.mulPose(Vector3f.ZP.rotationDegrees(-f3 / 2.0F));
 		}
-		matrixStack.scale(0.33f, 0.33f, 0.33f);
+		matrixStack.scale(0.25f, 0.25f, 0.25f);
 		BakedModel lantern = itemRenderer.getItemModelShaper().getModelManager().getModel(new ResourceLocation(stack.getItem().getRegistryName().getNamespace(), "block/" + stack.getItem().getRegistryName().getPath()));
 		MultiBufferSource.BufferSource buffer = Minecraft.getInstance().renderBuffers().bufferSource();
 		itemRenderer.render(stack, ItemTransforms.TransformType.HEAD, true, matrixStack, buffer, light, OverlayTexture.NO_OVERLAY, lantern);
