@@ -2,8 +2,8 @@ package com.psilocke.curiouslanterns.client;
 
 import com.psilocke.curiouslanterns.CuriousLanterns;
 import com.psilocke.curiouslanterns.curios.LanternRenderer;
-import com.psilocke.curiouslanterns.curios.MediumLanternRenderer;
 import com.psilocke.curiouslanterns.curios.LargeLanternRenderer;
+import com.psilocke.curiouslanterns.curios.MediumLanternRenderer;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
