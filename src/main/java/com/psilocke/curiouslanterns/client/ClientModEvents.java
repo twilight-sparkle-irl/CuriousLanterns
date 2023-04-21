@@ -3,6 +3,7 @@ package com.psilocke.curiouslanterns.client;
 import com.psilocke.curiouslanterns.CuriousLanterns;
 import com.psilocke.curiouslanterns.curios.LanternRenderer;
 import com.psilocke.curiouslanterns.curios.LargeLanternRenderer;
+import com.psilocke.curiouslanterns.curios.MediumLanternRenderer;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
@@ -31,6 +32,17 @@ public class ClientModEvents {
 			}
 		}
 		
+		//for medium lanterns
+		
+		for(String var : CuriousLanterns.medium_lanterns) {
+			String namespace = var.substring(0, var.indexOf(':'));
+			String item = var.substring(var.indexOf(':')+1);
+			
+			if(ModList.get().isLoaded(namespace)) {
+				CuriosRendererRegistry.register(ForgeRegistries.ITEMS.getValue(new ResourceLocation(namespace, item)), MediumLanternRenderer::new);
+			}
+		}
+		
 		//for larger lanterns
 		
 		for(String var : CuriousLanterns.large_lanterns) {
@@ -44,10 +56,10 @@ public class ClientModEvents {
 		
 		//additional lanterns because of fricking course
 		if(ModList.get().isLoaded("additionallanterns")) {
-			for(String color : CuriousLanterns.lan_colors) {
-				for(String material : CuriousLanterns.lan_materials) {
+			for(String color : CuriousLanterns.add_lan_colors) {
+				for(String material : CuriousLanterns.add_lan_materials) {
 					String name = color;
-					if(name == CuriousLanterns.lan_colors[0]) {
+					if(name == CuriousLanterns.add_lan_colors[0]) {
 						name += material;
 					}else name += ("_" + material);
 					
@@ -71,6 +83,17 @@ public class ClientModEvents {
 			}
 		}
 		
+		//for medium lanterns
+		
+		for(String var : CuriousLanterns.medium_lanterns) {
+			String namespace = var.substring(0, var.indexOf(':'));
+			String item = var.substring(var.indexOf(':')+1);
+			
+			if(ModList.get().isLoaded(namespace)) {
+				event.register(new ResourceLocation(namespace, "block/" + item));
+			}
+		}
+		
 		//for larger lanterns
 		
 		for(String var : CuriousLanterns.large_lanterns) {
@@ -84,10 +107,10 @@ public class ClientModEvents {
 		
 		//additional lanterns because of fricking course
 		if(ModList.get().isLoaded("additionallanterns")) {
-			for(String color : CuriousLanterns.lan_colors) {
-				for(String material : CuriousLanterns.lan_materials) {
+			for(String color : CuriousLanterns.add_lan_colors) {
+				for(String material : CuriousLanterns.add_lan_materials) {
 					String name = color;
-					if(name == CuriousLanterns.lan_colors[0]) {
+					if(name == CuriousLanterns.add_lan_colors[0]) {
 						name += material;
 					}else name += ("_" + material);
 					

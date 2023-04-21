@@ -38,6 +38,15 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 			this.tag(BELT).addOptional(new ResourceLocation(namespace, item));
 		}
 		
+		//for medium lanterns
+		
+		for(String var : CuriousLanterns.medium_lanterns) {
+			String namespace = var.substring(0, var.indexOf(':'));
+			String item = var.substring(var.indexOf(':')+1);
+			
+			this.tag(BELT).addOptional(new ResourceLocation(namespace, item));
+		}
+		
 		//for larger lanterns
 		
 		for(String var : CuriousLanterns.large_lanterns) {
@@ -49,10 +58,10 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 		
 		//for additional lanterns because of fricking course
 		
-		for(String color : CuriousLanterns.lan_colors) {
-			for(String material : CuriousLanterns.lan_materials) {
+		for(String color : CuriousLanterns.add_lan_colors) {
+			for(String material : CuriousLanterns.add_lan_materials) {
 				String name = color;
-				if(name == CuriousLanterns.lan_colors[0]) {
+				if(name == CuriousLanterns.add_lan_colors[0]) {
 					name += material;
 				}else name += ("_" + material);
 				

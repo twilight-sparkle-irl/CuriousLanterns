@@ -7,15 +7,16 @@ import com.psilocke.curiouslanterns.config.CuriousLanternsClientConfig;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.block.BlockRenderDispatcher;
 import net.minecraft.client.renderer.block.model.ItemTransforms;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.resources.model.BakedModel;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Block;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.client.ICurioRenderer;
 
@@ -38,6 +39,7 @@ public class LanternRenderer implements ICurioRenderer {
 	) {
 		matrixStack.pushPose();
 		ItemRenderer itemRenderer = Minecraft.getInstance().getItemRenderer();
+		BlockRenderDispatcher blockRenderer = Minecraft.getInstance().getBlockRenderer();
 		LivingEntity living = slotContext.entity();
 		if(living.isCrouching()) {
 			matrixStack.translate(0.0F, 0.14F, 0.3F);
@@ -63,7 +65,7 @@ public class LanternRenderer implements ICurioRenderer {
             matrixStack.mulPose(Vector3f.ZP.rotationDegrees(-f3 / 2.0F));
 		}
 		matrixStack.scale(0.5f, 0.5f, 0.5f);
-		BakedModel lantern = itemRenderer.getItemModelShaper().getModelManager().getModel(new ResourceLocation(stack.getItem().getCreatorModId(stack), "block/" + stack.getItem()));
+		BakedModel lantern = blockRenderer.getBlockModel(Block.byItem(stack.getItem()).defaultBlockState());
 		MultiBufferSource.BufferSource buffer = Minecraft.getInstance().renderBuffers().bufferSource();
 		itemRenderer.render(stack, ItemTransforms.TransformType.HEAD, true, matrixStack, buffer, light, OverlayTexture.NO_OVERLAY, lantern);
 		matrixStack.popPose();
