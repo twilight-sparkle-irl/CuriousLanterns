@@ -40,7 +40,9 @@ public class CuriousLanterns {
 			"mcwlights:tavern_lantern",
 			"mcwlights:festive_lantern",
 			"mcwlights:cross_lantern",
-			"mcwlights:bell_lantern"
+			"mcwlights:bell_lantern",
+			"hardcore_torches:lit_lantern",
+			"hardcore_torches:unlit_lantern"
 	};
 	
 	public static String[] medium_lanterns = {
