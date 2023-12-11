@@ -1,7 +1,7 @@
 package com.psilocke.curiouslanterns.curios;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.math.Vector3f;
+import com.mojang.math.Axis;
 import com.psilocke.curiouslanterns.config.CuriousLanternsClientConfig;
 
 import net.minecraft.client.Minecraft;
@@ -19,6 +19,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import top.theillusivec4.curios.api.SlotContext;
+import net.minecraft.world.item.ItemDisplayContext;
 import top.theillusivec4.curios.api.client.ICurioRenderer;
 
 public class MediumLanternRenderer implements ICurioRenderer {
@@ -46,7 +47,7 @@ public class MediumLanternRenderer implements ICurioRenderer {
 			matrixStack.translate(0.0F, 0.18F, 0.3F);
 		}
 		matrixStack.translate(-.23, 0.78, 0.133);
-		matrixStack.mulPose(Vector3f.XP.rotationDegrees(180));
+		matrixStack.mulPose(Axis.XP.rotationDegrees(180));
 		if(CuriousLanternsClientConfig.LANTERN_SWING.get()) {
 			double d0 = living.xo - living.getX();
             double d1 = living.yo - living.getY();
@@ -62,13 +63,13 @@ public class MediumLanternRenderer implements ICurioRenderer {
             f3 = Mth.clamp(f3, -20.0F, 20.0F);
             
 
-            matrixStack.mulPose(Vector3f.XP.rotationDegrees(6.0F + f2 / 2.0F + f1));
-            matrixStack.mulPose(Vector3f.ZP.rotationDegrees(-f3 / 2.0F));
+            matrixStack.mulPose(Axis.XP.rotationDegrees(6.0F + f2 / 2.0F + f1));
+            matrixStack.mulPose(Axis.ZP.rotationDegrees(-f3 / 2.0F));
 		}
 		matrixStack.scale(0.33f, 0.33f, 0.33f);
 		BakedModel lantern = blockRenderer.getBlockModel(Block.byItem(stack.getItem()).defaultBlockState());
 		MultiBufferSource.BufferSource buffer = Minecraft.getInstance().renderBuffers().bufferSource();
-		itemRenderer.render(stack, ItemTransforms.TransformType.HEAD, true, matrixStack, buffer, light, OverlayTexture.NO_OVERLAY, lantern);
+		itemRenderer.render(stack, ItemDisplayContext.HEAD, true, matrixStack, buffer, light, OverlayTexture.NO_OVERLAY, lantern);
 		matrixStack.popPose();
 	}
 

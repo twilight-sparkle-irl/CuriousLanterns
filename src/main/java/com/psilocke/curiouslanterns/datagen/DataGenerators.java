@@ -9,17 +9,16 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = CuriousLanterns.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
-public class DataGenerators {
-	private DataGenerators() {}
+public final class DataGenerators {
+    @SubscribeEvent
+    public static void gatherData(final GatherDataEvent event) {
+        final var generator = event.getGenerator();
+        final var output = generator.getPackOutput();
+        final var lookupProvider = event.getLookupProvider();
+        final var existingFileHelper = event.getExistingFileHelper();
 
-	@SubscribeEvent
-	public static void gatherData(GatherDataEvent event) {
-		DataGenerator gen = event.getGenerator();
-		ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
-		
-		ModBlockTagsProvider blockTags = new ModBlockTagsProvider(gen, existingFileHelper);
-		
-		gen.addProvider(true, blockTags);
-		gen.addProvider(true, new ModItemTagsProvider(gen, blockTags, existingFileHelper));
-	}
+        final var blockTagProvider = new ModBlockTagsProvider(output, lookupProvider, existingFileHelper);
+        generator.addProvider(event.includeServer(), blockTagProvider);
+        generator.addProvider(event.includeServer(), new ModItemTagsProvider(output, lookupProvider, blockTagProvider.contentsGetter(), existingFileHelper));
+    }
 }
