@@ -39,7 +39,7 @@ displayName="Curious Lanterns" #mandatory
 logoFile="curious_lanterns.png" #optional
 
 # A text field displayed in the mod UI
-credits="TheIllusiveC4 for Curios" #optional
+credits="TheIllusiveC4 for Curios, Twilight Sparkle for 1.20.1 port" #optional
 
 # A text field displayed in the mod UI
 authors="Psilocke" #optional
@@ -65,18 +65,18 @@ Allows lanterns to be placed on the hip for dynamic lighting.
     modId="minecraft"
     mandatory=true
 # This version range declares a minimum of the current minecraft version up to but not including the next major version
-    versionRange="[1.19.2,1.20)"
+    versionRange="[1.20.1,1.21)"
     ordering="NONE"
     side="BOTH"
 [[dependencies.curiouslanterns]]
 	modId="curios"
 	mandatory=true
-	versionRange="[1.19.2-5.1.1.0,)"
+	versionRange="[1.20.1+5.4.5,)"
 	ordering="NONE"
 	side="BOTH"
 [[dependencies.curiouslanterns]]
 	modId="radiantgear"
 	mandatory=true
-	versionRange="[2.0.0+1.19.2,)"
+	versionRange="[2.1.2+1.20.1,)"
 	ordering="NONE"
 	side="BOTH"
