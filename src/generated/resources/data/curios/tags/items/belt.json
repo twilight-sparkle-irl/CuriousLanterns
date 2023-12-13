@@ -29,6 +29,26 @@
       "required": false
     },
     {
+      "id": "suppsquared:copper_lantern",
+      "required": false
+    },
+    {
+      "id": "suppsquared:crimson_lantern",
+      "required": false
+    },
+    {
+      "id": "suppsquared:silver_lantern",
+      "required": false
+    },
+    {
+      "id": "suppsquared:brass_lantern",
+      "required": false
+    },
+    {
+      "id": "suppsquared:lead_lantern",
+      "required": false
+    },
+    {
       "id": "cyclic:gold_lantern",
       "required": false
     },
@@ -1858,6 +1878,114 @@
     },
     {
       "id": "additionallanterns:black_bricks_lantern",
+      "required": false
+    },
+    {
+      "id": "chipped:ender_lantern",
+      "required": false
+    },
+    {
+      "id": "chipped:blue_paper_lantern",
+      "required": false
+    },
+    {
+      "id": "chipped:dark_blue_paper_lantern",
+      "required": false
+    },
+    {
+      "id": "chipped:green_paper_lantern",
+      "required": false
+    },
+    {
+      "id": "chipped:purple_paper_lantern",
+      "required": false
+    },
+    {
+      "id": "chipped:red_paper_lantern",
+      "required": false
+    },
+    {
+      "id": "chipped:white_paper_lantern",
+      "required": false
+    },
+    {
+      "id": "chipped:wooden_cage_lantern",
+      "required": false
+    },
+    {
+      "id": "chipped:wooden_cage_soul_lantern",
+      "required": false
+    },
+    {
+      "id": "chipped:wrought_iron_cage_lantern",
+      "required": false
+    },
+    {
+      "id": "chipped:yellow_tube_lantern",
+      "required": false
+    },
+    {
+      "id": "chipped:blue_paper_soul_lantern",
+      "required": false
+    },
+    {
+      "id": "chipped:golden_paper_soul_lantern",
+      "required": false
+    },
+    {
+      "id": "chipped:gray_paper_soul_lantern",
+      "required": false
+    },
+    {
+      "id": "chipped:lime_paper_soul_lantern",
+      "required": false
+    },
+    {
+      "id": "chipped:orange_paper_soul_lantern",
+      "required": false
+    },
+    {
+      "id": "chipped:yellow_paper_soul_lantern",
+      "required": false
+    },
+    {
+      "id": "luphieclutteredmod:luphie_hoppin_park_lantern",
+      "required": false
+    },
+    {
+      "id": "luphieclutteredmod:luphie_handheld_sea_gem_lantern",
+      "required": false
+    },
+    {
+      "id": "dustrial_decor:redstone_lantern",
+      "required": false
+    },
+    {
+      "id": "chipped:burning_coal_lantern",
+      "required": false
+    },
+    {
+      "id": "chipped:small_green_lantern",
+      "required": false
+    },
+    {
+      "id": "chipped:checkered_iron_lantern",
+      "required": false
+    },
+    {
+      "id": "chipped:checkered_iron_soul_lantern",
+      "required": false
+    },
+    {
+      "id": "chipped:small_red_soul_lantern",
+      "required": false
+    },
+    {
+      "id": "chipped:tall_lantern",
+      "required": false
+    },
+    {
+      "id": "chipped:tall_soul_lantern",
       "required": false
     }
   ]

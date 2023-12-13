@@ -29,6 +29,11 @@ public class CuriousLanterns {
 			"supplementaries:silver_lantern",
 			"supplementaries:brass_lantern",
 			"supplementaries:lead_lantern",
+			"suppsquared:copper_lantern",
+			"suppsquared:crimson_lantern",
+			"suppsquared:silver_lantern",
+			"suppsquared:brass_lantern",
+			"suppsquared:lead_lantern",
 			"cyclic:gold_lantern",
 			"cyclic:gold_soul_lantern",
 			"cyclic:copper_lantern",
@@ -40,12 +45,39 @@ public class CuriousLanterns {
 			"mcwlights:tavern_lantern",
 			"mcwlights:festive_lantern",
 			"mcwlights:cross_lantern",
-			"mcwlights:bell_lantern"
+			"mcwlights:bell_lantern",
+			"dustrial_decor:redstone_lantern",
+			"chipped:burning_coal_lantern",
+			"chipped:small_green_lantern",
+			"chipped:checkered_iron_lantern",
+			"chipped:checkered_iron_soul_lantern",
+			"chipped:small_red_soul_lantern",
 	};
 	
 	public static String[] medium_lanterns = {
 			"quark:paper_lantern",
-			"quark:paper_lantern_sakura"
+			"quark:paper_lantern_sakura",
+			"chipped:ender_lantern",
+			"chipped:blue_paper_lantern",
+			"chipped:dark_blue_paper_lantern",
+			"chipped:green_paper_lantern",
+			"chipped:purple_paper_lantern",
+			"chipped:red_paper_lantern",
+			"chipped:white_paper_lantern",
+			"chipped:wooden_cage_lantern",
+			"chipped:wooden_cage_soul_lantern",
+			"chipped:wrought_iron_cage_lantern",
+			"chipped:yellow_tube_lantern",
+			"chipped:blue_paper_soul_lantern",
+			"chipped:golden_paper_soul_lantern",
+			"chipped:gray_paper_soul_lantern",
+			"chipped:lime_paper_soul_lantern",
+			"chipped:orange_paper_soul_lantern",
+			"chipped:yellow_paper_soul_lantern",
+			"luphieclutteredmod:luphie_hoppin_park_lantern",
+			"luphieclutteredmod:luphie_handheld_sea_gem_lantern",
+			"chipped:tall_lantern",
+			"chipped:tall_soul_lantern",
 	};
 	
 	public static String[] large_lanterns = {
@@ -152,7 +184,7 @@ public class CuriousLanterns {
 			"skinnedlanterns:honey_lantern_block",
 			"skinnedlanterns:honey_soul_lantern_block",
 			"skinnedlanterns:slime_lantern_block",
-			"skinnedlanterns:slime_soul_lantern_block"
+			"skinnedlanterns:slime_soul_lantern_block",
 	};
 
 	
